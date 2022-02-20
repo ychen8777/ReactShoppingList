@@ -2,10 +2,9 @@ import React, { Component } from "react";
 
 class Product extends Component {
   state = {
-    id: 1,
-    name: "bread",
-    price: 15,
-    quantity: 6
+    name: this.props.name,
+    price: this.props.price,
+    quantity: this.props.quantity
   };
 
   handleIncrease = () => {
@@ -18,25 +17,28 @@ class Product extends Component {
   };
 
   render() {
+    console.log("props", this.props);
     return (
-      <div>
-        <span className="m-3">{this.state.name}</span>
-        <span className="m-3">{this.state.price}</span>
-        <span className="m-3">{this.state.quantity}</span>
-        <button
-          onClick={this.handleIncrease}
-          className="btn btn-primary font-weight-bold"
-        >
-          {" "}
-          +{" "}
-        </button>
-        <button
-          onClick={this.handleDecrease}
-          className="btn btn-outline-primary font-weight-bold"
-        >
-          {" "}
-          -{" "}
-        </button>
+      <div className="row">
+        <span className="col-3">{this.state.name}</span>
+        <span className="col-3">{this.state.price}</span>
+        <span className="col-3">{this.state.quantity}</span>
+        <span className="col-2">
+          <button
+            onClick={this.handleIncrease}
+            className="btn btn-primary font-weight-bold"
+          >
+            {" "}
+            +{" "}
+          </button>
+          <button
+            onClick={this.handleDecrease}
+            className="btn btn-outline-primary font-weight-bold"
+          >
+            {" "}
+            -{" "}
+          </button>
+        </span>
       </div>
     );
   }
