@@ -1,9 +1,9 @@
 import { StrictMode } from "react";
 import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.css";
-import Product from "./components/Product";
+import Products from "./components/Products";
 
 import App from "./App";
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(<Product />, rootElement);
+ReactDOM.render(<Products />, rootElement);
