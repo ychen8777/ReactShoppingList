@@ -13,7 +13,12 @@ class Products extends Component {
 
   render() {
     return (
-      <div>
+      <div className="bg-light m-3 border border-light rounded">
+        <div className="row m-2 mb-3 text-center">
+          <span className="col-3 align-middle">Product name</span>
+          <span className="col-3 align-middle">Price</span>
+          <span className="col-3 align-middle">Quantity</span>
+        </div>
         {this.state.products.map((product) => (
           <Product
             key={product.id}

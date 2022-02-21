@@ -19,21 +19,21 @@ class Product extends Component {
   render() {
     console.log("props", this.props);
     return (
-      <div className="row">
-        <span className="col-3">{this.state.name}</span>
-        <span className="col-3">{this.state.price}</span>
-        <span className="col-3">{this.state.quantity}</span>
-        <span className="col-2">
+      <div className="row m-2">
+        <span className="col-3 align-middle">{this.state.name}</span>
+        <span className="col-3 align-middle">{this.state.price}</span>
+        <span className="col-3 align-middle">{this.state.quantity}</span>
+        <span className="col-2 align-middle">
           <button
             onClick={this.handleIncrease}
-            className="btn btn-primary font-weight-bold"
+            className="btn btn-primary font-weight-bold btn-sm me-1"
           >
             {" "}
             +{" "}
           </button>
           <button
             onClick={this.handleDecrease}
-            className="btn btn-outline-primary font-weight-bold"
+            className="btn btn-outline-primary font-weight-bold btn-sm align-middle"
           >
             {" "}
             -{" "}
