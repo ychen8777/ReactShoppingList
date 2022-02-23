@@ -6,13 +6,20 @@ import { useState } from "react";
 
 export default function App() {
   const [shoppingList, setShoppingList] = useState([
-    { name: "bread", quantity: 5, price: 1.99 }
+    { name: "bread", quantity: 5, price: 1.6666 }
   ]);
+
+  function addProduct(newProduct) {
+    setShoppingList((prevShoppingList) => {
+      return [...prevShoppingList, newProduct];
+    });
+  }
+
   return (
     <div className="App">
       <Header></Header>
       <div>
-        <AddForm></AddForm>
+        <AddForm onAdd={addProduct}></AddForm>
       </div>
       <div>
         <ShoppingList shoppingList={shoppingList}></ShoppingList>

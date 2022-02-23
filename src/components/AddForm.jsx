@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function AddForm() {
+export default function AddForm(props) {
   const [product, setProduct] = useState({
     name: "",
     quantity: "",
@@ -16,6 +16,12 @@ export default function AddForm() {
         [name]: value
       };
     });
+  }
+
+  function addProduct(event) {
+    props.onAdd(product);
+    setProduct({ name: "", quantity: "", price: "" });
+    event.preventDefault();
   }
 
   return (
@@ -59,7 +65,12 @@ export default function AddForm() {
             onChange={handleChange}
           />
         </div>
-        <button type="submit" className="btn btn-primary mb-3" id="addButton">
+        <button
+          type="submit"
+          className="btn btn-primary mb-3"
+          id="addButton"
+          onClick={addProduct}
+        >
           Add Product
         </button>
       </form>
