@@ -8,9 +8,15 @@ export default function AddForm(props) {
   });
 
   function handleChange(event) {
-    const { name, value } = event.target;
+    var { name, value } = event.target;
 
     setProduct((prevProduct) => {
+      if (name === "quantity") {
+        value = parseInt(value, 10);
+      } else if (name === "price") {
+        value = parseFloat(value);
+      }
+
       return {
         ...prevProduct,
         [name]: value
