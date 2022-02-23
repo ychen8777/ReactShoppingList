@@ -17,8 +17,8 @@ export default function ShoppingList(props) {
       {shoppingList.map((product) => (
         <div key={product.id} className="row m-2">
           <span className="col-3 align-middle">{product.name}</span>
-          <div className="col-3 align-middle">
-            <span className="col-1 align-middle">
+          <div className="col-3 d-flex justify-content-between">
+            <span className="col-1 align-right">
               <button
                 type="button"
                 onClick={() => onDecrement(product)}
@@ -28,10 +28,10 @@ export default function ShoppingList(props) {
                 -{" "}
               </button>
             </span>
-            <span className="col-1 text-center ms-3 me-3">
+            <span className="col-1 text-center ms-1 me-1">
               {product.quantity}
             </span>
-            <span className="col-1 align-middle">
+            <span className="col-1 align-left">
               <button
                 type="button"
                 onClick={() => onIncrement(product)}
