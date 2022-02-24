@@ -20,7 +20,7 @@ export default function App() {
 
   function onIncrement(product) {
     const curProduct = shoppingList.find((p) => p.id === product.id);
-    console.log(curProduct.id);
+    //console.log(curProduct.id);
     setShoppingList(
       shoppingList.map((p) =>
         p.id === product.id
@@ -28,6 +28,22 @@ export default function App() {
           : p
       )
     );
+  }
+
+  function onDecrement(product) {
+    const curProduct = shoppingList.find((p) => p.id === product.id);
+    if (curProduct.quantity === 1) {
+      // remove from shopping list
+      setShoppingList(shoppingList.filter((p) => p.id !== product.id));
+    } else {
+      setShoppingList(
+        shoppingList.map((p) =>
+          p.id === product.id
+            ? { ...curProduct, quantity: curProduct.quantity - 1 }
+            : p
+        )
+      );
+    }
   }
 
   return (
@@ -40,6 +56,7 @@ export default function App() {
         <ShoppingList
           shoppingList={shoppingList}
           onIncrement={onIncrement}
+          onDecrement={onDecrement}
         ></ShoppingList>
       </div>
     </div>
