@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function ShoppingList(props) {
-  const { shoppingList, onIncrement, onDecrement, removeProduct } = props;
+  const { shoppingList, onIncrement, onDecrement, onRemove } = props;
   return (
     <div className="bg-light m-3 border border-light rounded">
       <div className="row m-2 mb-3 text-center">
@@ -45,7 +45,7 @@ export default function ShoppingList(props) {
           <span className="col-1 align-middle">
             <button
               type="button"
-              onClick={() => removeProduct(product)}
+              onClick={() => onRemove(product)}
               className="btn btn-warning btn-sm"
             >
               Remove

@@ -46,6 +46,10 @@ export default function App() {
     }
   }
 
+  function onRemove(product) {
+    setShoppingList(shoppingList.filter((p) => p.id !== product.id));
+  }
+
   return (
     <div className="App">
       <Header></Header>
@@ -57,6 +61,7 @@ export default function App() {
           shoppingList={shoppingList}
           onIncrement={onIncrement}
           onDecrement={onDecrement}
+          onRemove={onRemove}
         ></ShoppingList>
       </div>
     </div>
