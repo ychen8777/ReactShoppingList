@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 export default function AddForm(props) {
   const [product, setProduct] = useState({
+    id: "",
     name: "",
     quantity: "",
     price: ""

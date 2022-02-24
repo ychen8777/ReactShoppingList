@@ -14,8 +14,8 @@ export default function ShoppingList(props) {
       {shoppingList.length === 0 && (
         <div className="mb-2">Shopping list is empty.</div>
       )}
-      {shoppingList.map((product) => (
-        <div key={product.id} className="row m-2">
+      {shoppingList.map((product, index) => (
+        <div key={index} id={index} className="row m-2">
           <span className="col-3 align-middle">{product.name}</span>
           <div className="col-3 d-flex justify-content-between">
             <span className="col-1 align-right">
