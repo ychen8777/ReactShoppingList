@@ -55,6 +55,18 @@ export default function ShoppingList(props) {
           <span className="col-2 text-end">{product.price.toFixed(2)}</span>
         </div>
       ))}
+
+      {shoppingList.length !== 0 && (
+        <div>
+          <div className="row"></div>
+          <div className="row">
+            <span className="col-9"></span>
+            <span className="col-3">
+              <hr align="right" style={{ height: 2 }}></hr>
+            </span>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
