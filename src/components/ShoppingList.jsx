@@ -2,6 +2,7 @@ import React from "react";
 
 export default function ShoppingList(props) {
   const { shoppingList, onIncrement, onDecrement, onRemove } = props;
+  const subtotal = shoppingList.reduce((a, c) => a + c.quantity * c.price, 0);
   return (
     <div className="bg-light m-3 border border-light rounded">
       <div className="row m-2 mb-3 text-center">
@@ -57,13 +58,20 @@ export default function ShoppingList(props) {
       ))}
 
       {shoppingList.length !== 0 && (
-        <div>
+        <div className="m-2">
           <div className="row"></div>
           <div className="row">
             <span className="col-9"></span>
             <span className="col-3">
               <hr align="right" style={{ height: 2 }}></hr>
             </span>
+          </div>
+          <div className="row">
+            <span className="col-9"></span>
+            <div className="col-3 d-flex justify-content-between">
+              <span className="col-1 text-start ms-1 me-1">Subtotal: </span>
+              <span className="col-2 text-end me-3">{subtotal.toFixed(2)}</span>
+            </div>
           </div>
         </div>
       )}
